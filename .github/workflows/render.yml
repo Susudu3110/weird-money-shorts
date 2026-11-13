@@ -1,0 +1,74 @@
+name: render
+# Renders the whole video on GitHub's servers: voice (Kokoro TTS) -> word timings
+# (Whisper) -> sound mix -> 25 animated shots -> MP4, then commits the MP4 back.
+on:
+  workflow_dispatch:
+  push:
+    paths: ["script.json", "src/**", "skill/**", "tools/**", "pipeline/**", ".github/workflows/render.yml"]
+
+concurrency:
+  group: render-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python deps (TTS + Whisper + mix)
+        run: |
+          python -m pip install --upgrade pip -q
+          python -m pip install -q numpy scipy kokoro-onnx faster-whisper
+
+      - name: Cache voice + whisper models (~850 MB, downloaded once)
+        uses: actions/cache@v4
+        with:
+          path: ~/.faceless-shorts
+          key: models-kokoro-whisper-v1
+
+      - name: Voice (Kokoro TTS, local)
+        run: bash skill/py skill/voice.py .
+
+      - name: Word timings (Whisper small.en, local)
+        run: bash skill/py skill/words.py .
+
+      - name: Sound mix (voice + music + cues)
+        run: |
+          python -m pip install -q numpy scipy
+          python tools/mix.py .
+
+      - name: Render (headless Chrome, software GL)
+        env:
+          CHROME: /usr/bin/google-chrome-stable
+          FPS: 24
+          SOFTWARE_GL: "1"
+        run: node tools/capture.mjs video renders/maple-syrup-heist.mp4
+
+      - name: Video info
+        run: |
+          ls -la renders/
+          ffprobe -v error -show_entries format=duration,size -of default=nw=1 renders/maple-syrup-heist.mp4
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: maple-syrup-heist-mp4
+          path: renders/maple-syrup-heist.mp4
+
+      - name: Commit the MP4 back to the repo
+        run: |
+          git config user.name "render-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add renders/maple-syrup-heist.mp4
+          if git diff --cached --quiet; then echo "no change"; else
+            git commit -m "render: maple-syrup-heist.mp4 (built on GitHub Actions) [skip ci]"
+            git push
+          fi
