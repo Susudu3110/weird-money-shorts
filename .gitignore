@@ -1,0 +1,11 @@
+# big generated files (rebuildable locally)
+*.wav
+*.mp4
+renders/
+review/f/
+review/s/
+review/t/
+
+# node/tooling
+node_modules/
+.DS_Store

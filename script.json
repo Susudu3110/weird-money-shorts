@@ -1,0 +1,100 @@
+{
+ "title": "The $18,000,000 Maple Syrup Heist",
+ "voice": "am_michael",
+ "speed": 1.14,
+ "lead": 0.3,
+ "outro": 0.6,
+ "gap": 0.14,
+ "music": "bounce",
+ "sources": [
+  "The Canadian Encyclopedia, 'Great Canadian Maple Syrup Heist' (2011-2012; about 2,700 tonnes stolen from the strategic reserve warehouse at Saint-Louis-de-Blandford, Quebec; valued at nearly $18 million; discovered in July 2012 when an inspector found a barrel that nearly fell over was light; other barrels held water; thieves siphoned syrup into their own barrels over about 10 months and refilled the empties with water; about 450 tonnes recovered; Richard Vallieres, the ringleader, sentenced to 7 years 10 months; four men convicted)",
+  "CBC News, '2 charged in $18M maple syrup heist' (18 Dec 2012) and 'Only in Canada? Seized maple syrup gets police protection' (4 Oct 2012) (barrels taken from the warehouse; 600+ barrels recovered in New Brunswick; investigation covered Quebec, Ontario, New Brunswick and the northern U.S.)",
+  "NPR, 'Thieves Hit Warehouse Holding $30 Million Of Canadian Maple Syrup' (31 Aug 2012) (the Federation of Quebec Maple Syrup Producers found the theft during a routine inventory check; the reserve exists to stabilise supply and price)",
+  "National Post, 'The great maple syrup heist: Trial opens...' (20 Oct 2016) (investigators: nearly 3,000 tonnes, valued at $18,721,000; RCMP, Canada Border Services Agency and U.S. Immigration and Customs Enforcement assisted; more than 300 people interviewed, 40 search warrants)",
+  "A full barrel of maple syrup weighs about 270 kg (about 600 lb) (Canadian Encyclopedia, heist article)"
+ ],
+ "lines": [
+  {
+   "text": "In 2012, someone stole eighteen million dollars of maple syrup.",
+   "caps": "In 2012, | someone stole | $18 million | of maple syrup"
+  },
+  {
+   "text": "And for almost a year, nobody noticed."
+  },
+  {
+   "text": "Quebec makes most of the world's maple syrup."
+  },
+  {
+   "text": "The federation keeps a strategic reserve:"
+  },
+  {
+   "text": "a warehouse stacked with barrels,",
+   "caps": "a warehouse | stacked | with barrels,"
+  },
+  {
+   "text": "in Saint-Louis-de-Blandford."
+  },
+  {
+   "text": "A full barrel weighs six hundred pounds."
+  },
+  {
+   "text": "The thieves never broke in."
+  },
+  {
+   "text": "They worked in the same industrial park."
+  },
+  {
+   "text": "Every night, they rolled a barrel out,"
+  },
+  {
+   "text": "siphoned the syrup into their own barrels,"
+  },
+  {
+   "text": "filled the empty one with water,"
+  },
+  {
+   "text": "and rolled it back."
+  },
+  {
+   "text": "Ten months. Nobody checked."
+  },
+  {
+   "text": "Then July 2012: an inspector climbs the stack,",
+   "caps": "Then, | July 2012: | an inspector | climbs the stack,"
+  },
+  {
+   "text": "and one barrel almost falls over."
+  },
+  {
+   "text": "Too light. He opens it. It's water."
+  },
+  {
+   "text": "Police interview three hundred people,",
+   "caps": "Police | interview | three hundred | people,"
+  },
+  {
+   "text": "and search forty locations."
+  },
+  {
+   "text": "They recover about four hundred fifty tonnes."
+  },
+  {
+   "text": "The rest was sold in Ontario and the U.S."
+  },
+  {
+   "text": "Four men went to prison."
+  },
+  {
+   "text": "The ringleader got nearly eight years."
+  },
+  {
+   "text": "And the reserve is still there."
+  },
+  {
+   "text": "The locks are better now."
+  },
+  {
+   "text": "Somewhere out there, someone is still eating the world's most expensive pancakes."
+  }
+ ]
+}
